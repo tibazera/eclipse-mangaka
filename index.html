@@ -1,0 +1,157 @@
+<title>Eclipse Mangá</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: lista de capítulos em cartões verticais; leitor em rolagem contínua de página inteira, uma imagem por vez, fundo de tinta. */
+:root{
+  --bg:#f1eee8; --surface:#e7e2d8; --ink:#17151c; --muted:#6b6672; --line:#d4cdc0;
+  --accent:#c2410c; --accent-ink:#fff; --warn:#8a5a00; --warn-bg:#f6e3b4;
+  --display:"Oswald","Arial Narrow",Impact,sans-serif; --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f0e14; --surface:#1a1822; --ink:#efeae0; --muted:#9a94a6; --line:#2b2836;
+  --accent:#ff7a3d; --accent-ink:#17151c; --warn:#f2c14e; --warn-bg:#3a2f12; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f0e14; --surface:#1a1822; --ink:#efeae0; --muted:#9a94a6; --line:#2b2836;
+  --accent:#ff7a3d; --accent-ink:#17151c; --warn:#f2c14e; --warn-bg:#3a2f12; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.45;
+  padding-block:0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:640px;margin:0 auto;min-width:0}
+header.top{padding-block:20px 8px}
+.logo{font-family:var(--display);font-weight:700;letter-spacing:.22em;font-size:28px;text-transform:uppercase;margin:0}
+.logo span{color:var(--accent)}
+.sub{color:var(--muted);margin:4px 0 0;font-size:14px}
+.list{display:grid;gap:14px;padding-block:14px 40px}
+.card{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:stretch;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;color:inherit;text-decoration:none;min-width:0}
+.card:focus-visible,.btn:focus-visible,.nav button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.thumb{background:var(--line);aspect-ratio:2/3;width:96px;object-fit:cover;display:block}
+.thumb.empty{display:grid;place-items:center;font-family:var(--display);color:var(--muted);font-size:13px;letter-spacing:.1em;text-align:center}
+.info{padding:12px 12px 12px 0;display:flex;flex-direction:column;gap:6px;min-width:0}
+.info h2{font-family:var(--display);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0;font-weight:500}
+.info h3{font-family:var(--display);font-size:22px;line-height:1.1;margin:0;font-weight:600;text-wrap:balance}
+.prog{height:5px;background:var(--line);border-radius:3px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--accent)}
+.meta{font-size:13px;color:var(--muted);margin:0}
+.tag{align-self:flex-start;font-size:12px;padding:2px 8px;border-radius:999px;background:var(--warn-bg);color:var(--warn)}
+.foot{color:var(--muted);font-size:12px;padding-bottom:28px}
+/* leitor */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;align-items:center;gap:10px;padding-block:10px;border-bottom:1px solid var(--line);margin:0 calc(-1*max(16px,env(safe-area-inset-left,0px)))}
+.bar>*{min-width:0}
+.bar .t{flex:1;font-family:var(--display);font-size:17px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .pos{color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums}
+.btn{font:inherit;font-weight:600;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px 12px;cursor:pointer;min-height:40px}
+.btn.pri{background:var(--accent);color:var(--accent-ink);border-color:transparent}
+.bar .btn:first-child{margin-left:max(16px,env(safe-area-inset-left,0px))}
+.bar .pos{margin-right:max(16px,env(safe-area-inset-right,0px))}
+.pages{display:flex;flex-direction:column;gap:6px;padding-block:8px 24px;max-width:760px;margin:0 auto}
+.pg{position:relative;background:var(--surface);min-height:60vh;scroll-margin-top:64px}
+.pg img{display:block;width:100%;height:auto}
+.pg .rv{position:absolute;left:8px;top:8px;font-size:12px;padding:3px 8px;border-radius:999px;background:var(--warn-bg);color:var(--warn)}
+.stage{position:relative;max-width:760px;margin:8px auto 0;cursor:pointer;background:var(--surface);min-height:50vh;-webkit-tap-highlight-color:transparent;user-select:none}
+.stage img{display:block;width:100%;height:auto}
+.stage .rv{position:absolute;left:8px;top:8px;font-size:12px;padding:3px 8px;border-radius:999px;background:var(--warn-bg);color:var(--warn)}
+.endbox{max-width:760px;margin:12px auto 0;display:flex;flex-direction:column;gap:10px}
+.hint{max-width:760px;margin:12px auto 32px;color:var(--muted);font-size:13px;text-align:center}
+.pend{padding:18px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:10px}
+.nav{display:flex;gap:10px;justify-content:space-between;padding-block:8px 40px;max-width:760px;margin:0 auto}
+.nav .btn{flex:1}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Oswald:wght@500;600;700&display=swap">
+
+<div class="wrap" id="app"></div>
+
+<script>
+var APP=document.getElementById('app'), DATA=null;
+function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+
+function home(){
+  APP.innerHTML='';
+  var h=el('header','top','<h1 class="logo">ECLI<span>P</span>SE</h1><p class="sub">Mangá em produção · atualizado em '+esc(DATA.atualizado.split('-').reverse().join('/'))+'</p>');
+  APP.appendChild(h);
+  var list=el('div','list');
+  DATA.capitulos.forEach(function(c){
+    var a=el('a','card'); a.href='#'+c.id;
+    var th=c.capa?'<img class="thumb" alt="Capa" loading="lazy" src="'+c.capa+'">':'<div class="thumb empty">SEM<br>CAPA</div>';
+    var pct=Math.round(100*c.paginas.length/c.total), last=ls('ult-'+c.id);
+    a.innerHTML=th+'<div class="info"><h2>'+esc(c.titulo)+'</h2><h3>'+esc(c.sub)+'</h3>'+
+      '<div class="prog"><i style="width:'+pct+'%"></i></div>'+
+      '<p class="meta">'+c.paginas.length+' de '+c.total+' páginas prontas'+(last?' · parou na pág. '+esc(last):'')+'</p>'+
+      '<span class="tag">'+esc(c.status)+'</span></div>';
+    list.appendChild(a);
+  });
+  APP.appendChild(list);
+  APP.appendChild(el('p','foot','Leitura de cima para baixo. As páginas novas aparecem aqui conforme o projeto avança.'));
+  window.scrollTo(0,0);
+}
+
+function reader(id){ (ls('modo')==='rolagem')?readerScroll(id):readerPaged(id) }
+
+function readerPaged(id){
+  var i=DATA.capitulos.findIndex(function(c){return c.id===id}); if(i<0){location.hash='';return}
+  var c=DATA.capitulos[i]; APP.innerHTML='';
+  var items=[]; if(c.capa)items.push({src:c.capa,alt:'Capa de '+c.sub,label:'Capa'});
+  c.paginas.forEach(function(p){items.push({src:p.src,alt:'Página '+p.n+' · '+p.titulo,label:p.n+' / '+c.paginas.length,rv:p.revisar})});
+  var idx=Math.min(Math.max(parseInt(ls('idx-'+id)||'0',10),0),items.length-1);
+  var bar=el('div','bar'); var back=el('button','btn','‹ Lista'); back.onclick=function(){location.hash=''};
+  var title=el('div','t',esc(c.titulo+' · '+c.sub)); var pos=el('div','pos','');
+  var mode=el('button','btn','Rolagem'); mode.onclick=function(){ls('modo','rolagem');readerScroll(id)};
+  bar.appendChild(back);bar.appendChild(title);bar.appendChild(pos);bar.appendChild(mode);APP.appendChild(bar);
+  var stage=el('div','stage'); var img=el('img'); var rv=el('span','rv'); rv.textContent='em correção';
+  var endbox=el('div','endbox'); stage.appendChild(img);stage.appendChild(rv);APP.appendChild(stage);APP.appendChild(endbox);
+  var hint=el('p','hint','Toque na imagem para avançar. Toque na borda esquerda ou deslize para voltar.'); APP.appendChild(hint);
+  function show(n){
+    if(n<0)return; if(n>=items.length){idx=items.length-1;return}
+    idx=n; var it=items[idx]; img.src=it.src; img.alt=it.alt; rv.hidden=!it.rv; pos.textContent=it.label;
+    ls('idx-'+id,String(idx)); if(it.label!=='Capa')ls('ult-'+id,String(idx+(c.capa?0:1)));
+    if(items[idx+1]){var pre=new Image();pre.src=items[idx+1].src}
+    endbox.innerHTML='';
+    if(idx===items.length-1){
+      if(c.paginas.length<c.total)endbox.appendChild(el('div','pend','Faltam '+(c.total-c.paginas.length)+' páginas. Elas entram aqui quando forem desenhadas e aprovadas.'));
+      var nx=DATA.capitulos[i+1]; if(nx){var b=el('button','btn pri',nx.titulo+' ›');b.onclick=function(){location.hash=nx.id};endbox.appendChild(b)}
+    }
+    window.scrollTo(0,0);
+  }
+  stage.addEventListener('click',function(e){var r=stage.getBoundingClientRect();(e.clientX-r.left)<r.width*0.3?show(idx-1):show(idx+1)});
+  var sx=null;stage.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+  stage.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;sx=null;if(Math.abs(dx)>60){e.preventDefault();dx<0?show(idx+1):show(idx-1)}});
+  document.onkeydown=function(e){if(e.key==='ArrowRight'||e.key===' ')show(idx+1);if(e.key==='ArrowLeft')show(idx-1)};
+  show(idx);
+}
+
+function readerScroll(id){
+  var i=DATA.capitulos.findIndex(function(c){return c.id===id}); if(i<0){location.hash='';return}
+  var c=DATA.capitulos[i]; APP.innerHTML=''; document.onkeydown=null;
+  var bar=el('div','bar'); var back=el('button','btn','‹ Lista'); back.onclick=function(){location.hash=''};
+  var title=el('div','t',esc(c.titulo+' · '+c.sub)); var pos=el('div','pos','');
+  var mode=el('button','btn','Página'); mode.onclick=function(){ls('modo','paginas');readerPaged(id)};
+  bar.appendChild(back);bar.appendChild(title);bar.appendChild(pos);bar.appendChild(mode);APP.appendChild(bar);
+  var box=el('div','pages'); APP.appendChild(box);
+  var nodes=[];
+  if(c.capa){var d=el('div','pg'); d.innerHTML='<img alt="Capa de '+esc(c.sub)+'" src="'+c.capa+'">'; box.appendChild(d)}
+  c.paginas.forEach(function(p){
+    var d=el('div','pg'); d.dataset.n=p.n;
+    d.innerHTML='<img loading="lazy" alt="Página '+p.n+' · '+esc(p.titulo)+'" src="'+p.src+'">'+(p.revisar?'<span class="rv">em correção</span>':'');
+    box.appendChild(d); nodes.push(d);
+  });
+  if(c.paginas.length<c.total) box.appendChild(el('div','pend','Faltam '+(c.total-c.paginas.length)+' páginas. Elas entram aqui assim que forem desenhadas e aprovadas.'));
+  var nav=el('div','nav'); var nx=DATA.capitulos[i+1], pv=DATA.capitulos[i-1];
+  if(pv){var b=el('button','btn','‹ '+pv.titulo);b.onclick=function(){location.hash=pv.id};nav.appendChild(b)}
+  if(nx){var b2=el('button','btn pri',nx.titulo+' ›');b2.onclick=function(){location.hash=nx.id};nav.appendChild(b2)}
+  APP.appendChild(nav);
+  var total=c.paginas.length;
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var n=e.target.dataset.n;pos.textContent=n+' / '+total;ls('ult-'+id,n)}})},{rootMargin:'-45% 0px -45% 0px'});
+    nodes.forEach(function(n){io.observe(n)});
+  }
+  var last=parseInt(ls('ult-'+id)||'0',10);
+  window.scrollTo(0,0);
+  if(last>1){var t=nodes.filter(function(n){return +n.dataset.n===last})[0]; if(t)setTimeout(function(){t.scrollIntoView()},250)}
+}
+
+function route(){var h=location.hash.replace('#','');if(!DATA)return;h?reader(h):home()}
+window.addEventListener('hashchange',route);
+fetch('manifest.json').then(function(r){return r.json()}).then(function(j){DATA=j;route()}).catch(function(){APP.innerHTML='<p class="pend">Não consegui carregar a lista de capítulos. Recarregue a página.</p>'});
+</script>

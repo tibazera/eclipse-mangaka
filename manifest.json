@@ -1,0 +1,655 @@
+{
+ "atualizado": "2026-11-13",
+ "capitulos": [
+  {
+   "id": "prologo",
+   "titulo": "Prólogo",
+   "sub": "A Queda dos Eternos",
+   "status": "Completo para leitura (revisão pendente)",
+   "total": 20,
+   "capa": "img/prologo/capa.webp",
+   "paginas": [
+    {
+     "n": 1,
+     "titulo": "",
+     "src": "img/prologo/001.webp",
+     "revisar": false
+    },
+    {
+     "n": 2,
+     "titulo": "",
+     "src": "img/prologo/002.webp",
+     "revisar": false
+    },
+    {
+     "n": 3,
+     "titulo": "",
+     "src": "img/prologo/003.webp",
+     "revisar": false
+    },
+    {
+     "n": 4,
+     "titulo": "",
+     "src": "img/prologo/004.webp",
+     "revisar": false
+    },
+    {
+     "n": 5,
+     "titulo": "",
+     "src": "img/prologo/005.webp",
+     "revisar": false
+    },
+    {
+     "n": 6,
+     "titulo": "",
+     "src": "img/prologo/006.webp",
+     "revisar": false
+    },
+    {
+     "n": 7,
+     "titulo": "",
+     "src": "img/prologo/007.webp",
+     "revisar": false
+    },
+    {
+     "n": 8,
+     "titulo": "",
+     "src": "img/prologo/008.webp",
+     "revisar": false
+    },
+    {
+     "n": 9,
+     "titulo": "",
+     "src": "img/prologo/009.webp",
+     "revisar": false
+    },
+    {
+     "n": 10,
+     "titulo": "",
+     "src": "img/prologo/010.webp",
+     "revisar": false
+    },
+    {
+     "n": 11,
+     "titulo": "",
+     "src": "img/prologo/011.webp",
+     "revisar": false
+    },
+    {
+     "n": 12,
+     "titulo": "",
+     "src": "img/prologo/012.webp",
+     "revisar": false
+    },
+    {
+     "n": 13,
+     "titulo": "",
+     "src": "img/prologo/013.webp",
+     "revisar": false
+    },
+    {
+     "n": 14,
+     "titulo": "",
+     "src": "img/prologo/014.webp",
+     "revisar": false
+    },
+    {
+     "n": 15,
+     "titulo": "",
+     "src": "img/prologo/015.webp",
+     "revisar": false
+    },
+    {
+     "n": 16,
+     "titulo": "",
+     "src": "img/prologo/016.webp",
+     "revisar": false
+    },
+    {
+     "n": 17,
+     "titulo": "",
+     "src": "img/prologo/017.webp",
+     "revisar": false
+    },
+    {
+     "n": 18,
+     "titulo": "",
+     "src": "img/prologo/018.webp",
+     "revisar": false
+    },
+    {
+     "n": 19,
+     "titulo": "",
+     "src": "img/prologo/019.webp",
+     "revisar": false
+    },
+    {
+     "n": 20,
+     "titulo": "",
+     "src": "img/prologo/020.webp",
+     "revisar": false
+    }
+   ]
+  },
+  {
+   "id": "ep01",
+   "titulo": "Episódio 1",
+   "sub": "O Chamado dos Cinco",
+   "status": "20 páginas ilustradas; revisão de continuidade concluída",
+   "total": 20,
+   "capa": "img/ep01/capa.webp",
+   "paginas": [
+    {
+     "n": 1,
+     "titulo": "O último onigiri",
+     "src": "img/ep01/001.webp",
+     "revisar": false
+    },
+    {
+     "n": 2,
+     "titulo": "Fora do mapa",
+     "src": "img/ep01/002.webp",
+     "revisar": false
+    },
+    {
+     "n": 3,
+     "titulo": "A escada",
+     "src": "img/ep01/003.webp",
+     "revisar": false
+    },
+    {
+     "n": 4,
+     "titulo": "Cinco encaixes",
+     "src": "img/ep01/004.webp",
+     "revisar": false
+    },
+    {
+     "n": 5,
+     "titulo": "Chamados",
+     "src": "img/ep01/005.webp",
+     "revisar": false
+    },
+    {
+     "n": 6,
+     "titulo": "A mão de Ren",
+     "src": "img/ep01/006.webp",
+     "revisar": false
+    },
+    {
+     "n": 7,
+     "titulo": "Luna atravessa",
+     "src": "img/ep01/007.webp",
+     "revisar": false
+    },
+    {
+     "n": 8,
+     "titulo": "Peso e eco",
+     "src": "img/ep01/008.webp",
+     "revisar": false
+    },
+    {
+     "n": 9,
+     "titulo": "O último encaixe",
+     "src": "img/ep01/009.webp",
+     "revisar": false
+    },
+    {
+     "n": 10,
+     "titulo": "Verde",
+     "src": "img/ep01/010.webp",
+     "revisar": false
+    },
+    {
+     "n": 11,
+     "titulo": "Depois da luz",
+     "src": "img/ep01/011.webp",
+     "revisar": false
+    },
+    {
+     "n": 12,
+     "titulo": "Reflexo errado",
+     "src": "img/ep01/012.webp",
+     "revisar": false
+    },
+    {
+     "n": 13,
+     "titulo": "Uma oferta",
+     "src": "img/ep01/013.webp",
+     "revisar": false
+    },
+    {
+     "n": 14,
+     "titulo": "O que significa",
+     "src": "img/ep01/014.webp",
+     "revisar": false
+    },
+    {
+     "n": 15,
+     "titulo": "Puxado de volta",
+     "src": "img/ep01/015.webp",
+     "revisar": false
+    },
+    {
+     "n": 16,
+     "titulo": "A escada de volta",
+     "src": "img/ep01/016.webp",
+     "revisar": false
+    },
+    {
+     "n": 17,
+     "titulo": "Rua normal",
+     "src": "img/ep01/017.webp",
+     "revisar": false
+    },
+    {
+     "n": 18,
+     "titulo": "Teste",
+     "src": "img/ep01/018.webp",
+     "revisar": false
+    },
+    {
+     "n": 19,
+     "titulo": "Sr. Hayashi",
+     "src": "img/ep01/019.webp",
+     "revisar": false
+    },
+    {
+     "n": 20,
+     "titulo": "O chamado continua",
+     "src": "img/ep01/020.webp",
+     "revisar": false
+    }
+   ]
+  },
+  {
+   "id": "ep02",
+   "titulo": "Episódio 2",
+   "sub": "O Santuário",
+   "status": "20 páginas ilustradas; revisão de continuidade concluída",
+   "total": 20,
+   "capa": "img/ep02/capa.webp",
+   "paginas": [
+    {
+     "n": 1,
+     "titulo": "Duas e treze",
+     "src": "img/ep02/001.webp",
+     "revisar": false
+    },
+    {
+     "n": 2,
+     "titulo": "Puxados",
+     "src": "img/ep02/002.webp",
+     "revisar": false
+    },
+    {
+     "n": 3,
+     "titulo": "O salão",
+     "src": "img/ep02/003.webp",
+     "revisar": false
+    },
+    {
+     "n": 4,
+     "titulo": "Sem porta",
+     "src": "img/ep02/004.webp",
+     "revisar": false
+    },
+    {
+     "n": 5,
+     "titulo": "A silhueta",
+     "src": "img/ep02/005.webp",
+     "revisar": false
+    },
+    {
+     "n": 6,
+     "titulo": "Mille",
+     "src": "img/ep02/006.webp",
+     "revisar": false
+    },
+    {
+     "n": 7,
+     "titulo": "Os cinco originais",
+     "src": "img/ep02/007.webp",
+     "revisar": false
+    },
+    {
+     "n": 8,
+     "titulo": "O mais gentil",
+     "src": "img/ep02/008.webp",
+     "revisar": false
+    },
+    {
+     "n": 9,
+     "titulo": "O convite",
+     "src": "img/ep02/009.webp",
+     "revisar": false
+    },
+    {
+     "n": 10,
+     "titulo": "A queda",
+     "src": "img/ep02/010.webp",
+     "revisar": false
+    },
+    {
+     "n": 11,
+     "titulo": "O duelo",
+     "src": "img/ep02/011.webp",
+     "revisar": false
+    },
+    {
+     "n": 12,
+     "titulo": "As cinco luzes",
+     "src": "img/ep02/012.webp",
+     "revisar": false
+    },
+    {
+     "n": 13,
+     "titulo": "Por que vocês",
+     "src": "img/ep02/013.webp",
+     "revisar": false
+    },
+    {
+     "n": 14,
+     "titulo": "O que Mille não sabe",
+     "src": "img/ep02/014.webp",
+     "revisar": false
+    },
+    {
+     "n": 15,
+     "titulo": "A gravação falha",
+     "src": "img/ep02/015.webp",
+     "revisar": false
+    },
+    {
+     "n": 16,
+     "titulo": "Silêncio no salão",
+     "src": "img/ep02/016.webp",
+     "revisar": false
+    },
+    {
+     "n": 17,
+     "titulo": "Combinado",
+     "src": "img/ep02/017.webp",
+     "revisar": false
+    },
+    {
+     "n": 18,
+     "titulo": "De volta",
+     "src": "img/ep02/018.webp",
+     "revisar": false
+    },
+    {
+     "n": 19,
+     "titulo": "Só Taro",
+     "src": "img/ep02/019.webp",
+     "revisar": false
+    },
+    {
+     "n": 20,
+     "titulo": "A porta",
+     "src": "img/ep02/020.webp",
+     "revisar": false
+    }
+   ]
+  },
+  {
+   "id": "ep03",
+   "titulo": "Episódio 3",
+   "sub": "Segunda-feira",
+   "status": "20 páginas ilustradas; revisão de continuidade concluída",
+   "total": 20,
+   "capa": "img/ep03/capa.webp",
+   "paginas": [
+    {
+     "n": 1,
+     "titulo": "Joelho e chuva",
+     "src": "img/ep03/001.webp",
+     "revisar": false
+    },
+    {
+     "n": 2,
+     "titulo": "Quatro horas",
+     "src": "img/ep03/002.webp",
+     "revisar": false
+    },
+    {
+     "n": 3,
+     "titulo": "As canetas",
+     "src": "img/ep03/003.webp",
+     "revisar": false
+    },
+    {
+     "n": 4,
+     "titulo": "O armário",
+     "src": "img/ep03/004.webp",
+     "revisar": false
+    },
+    {
+     "n": 5,
+     "titulo": "Regras",
+     "src": "img/ep03/005.webp",
+     "revisar": false
+    },
+    {
+     "n": 6,
+     "titulo": "A conselheira",
+     "src": "img/ep03/006.webp",
+     "revisar": false
+    },
+    {
+     "n": 7,
+     "titulo": "O disco",
+     "src": "img/ep03/007.webp",
+     "revisar": false
+    },
+    {
+     "n": 8,
+     "titulo": "Limites",
+     "src": "img/ep03/008.webp",
+     "revisar": false
+    },
+    {
+     "n": 9,
+     "titulo": "Por que ajudar",
+     "src": "img/ep03/009.webp",
+     "revisar": false
+    },
+    {
+     "n": 10,
+     "titulo": "A Zona",
+     "src": "img/ep03/010.webp",
+     "revisar": false
+    },
+    {
+     "n": 11,
+     "titulo": "O ginásio",
+     "src": "img/ep03/011.webp",
+     "revisar": false
+    },
+    {
+     "n": 12,
+     "titulo": "O plano",
+     "src": "img/ep03/012.webp",
+     "revisar": false
+    },
+    {
+     "n": 13,
+     "titulo": "Discordância",
+     "src": "img/ep03/013.webp",
+     "revisar": false
+    },
+    {
+     "n": 14,
+     "titulo": "O caderno",
+     "src": "img/ep03/014.webp",
+     "revisar": false
+    },
+    {
+     "n": 15,
+     "titulo": "Fome",
+     "src": "img/ep03/015.webp",
+     "revisar": false
+    },
+    {
+     "n": 16,
+     "titulo": "Pôr do sol",
+     "src": "img/ep03/016.webp",
+     "revisar": false
+    },
+    {
+     "n": 17,
+     "titulo": "A rua",
+     "src": "img/ep03/017.webp",
+     "revisar": false
+    },
+    {
+     "n": 18,
+     "titulo": "A tosse",
+     "src": "img/ep03/018.webp",
+     "revisar": false
+    },
+    {
+     "n": 19,
+     "titulo": "Amanhã",
+     "src": "img/ep03/019.webp",
+     "revisar": false
+    },
+    {
+     "n": 20,
+     "titulo": "O disco gira",
+     "src": "img/ep03/020.webp",
+     "revisar": false
+    }
+   ]
+  },
+  {
+   "id": "ep04",
+   "titulo": "Episódio 4",
+   "sub": "Eco",
+   "status": "20 páginas ilustradas; revisão de continuidade concluída",
+   "total": 20,
+   "capa": null,
+   "paginas": [
+    {
+     "n": 1,
+     "titulo": "Do lado de fora",
+     "src": "img/ep04/001.webp",
+     "revisar": false
+    },
+    {
+     "n": 2,
+     "titulo": "O ponteiro",
+     "src": "img/ep04/002.webp",
+     "revisar": false
+    },
+    {
+     "n": 3,
+     "titulo": "Apagão",
+     "src": "img/ep04/003.webp",
+     "revisar": false
+    },
+    {
+     "n": 4,
+     "titulo": "A dobra",
+     "src": "img/ep04/004.webp",
+     "revisar": false
+    },
+    {
+     "n": 5,
+     "titulo": "Passageiros",
+     "src": "img/ep04/005.webp",
+     "revisar": false
+    },
+    {
+     "n": 6,
+     "titulo": "Ecos",
+     "src": "img/ep04/006.webp",
+     "revisar": false
+    },
+    {
+     "n": 7,
+     "titulo": "Sem tempo para sinal",
+     "src": "img/ep04/007.webp",
+     "revisar": false
+    },
+    {
+     "n": 8,
+     "titulo": "Metade da armadura",
+     "src": "img/ep04/008.webp",
+     "revisar": false
+    },
+    {
+     "n": 9,
+     "titulo": "Gravidade presa",
+     "src": "img/ep04/009.webp",
+     "revisar": false
+    },
+    {
+     "n": 10,
+     "titulo": "Portal errado",
+     "src": "img/ep04/010.webp",
+     "revisar": false
+    },
+    {
+     "n": 11,
+     "titulo": "Criança sob o banco",
+     "src": "img/ep04/011.webp",
+     "revisar": false
+    },
+    {
+     "n": 12,
+     "titulo": "Na frente",
+     "src": "img/ep04/012.webp",
+     "revisar": false
+    },
+    {
+     "n": 13,
+     "titulo": "O custo da cura",
+     "src": "img/ep04/013.webp",
+     "revisar": false
+    },
+    {
+     "n": 14,
+     "titulo": "Segura mais um pouco",
+     "src": "img/ep04/014.webp",
+     "revisar": false
+    },
+    {
+     "n": 15,
+     "titulo": "Uma saída de cada vez",
+     "src": "img/ep04/015.webp",
+     "revisar": false
+    },
+    {
+     "n": 16,
+     "titulo": "O último passageiro",
+     "src": "img/ep04/016.webp",
+     "revisar": false
+    },
+    {
+     "n": 17,
+     "titulo": "O trilho fica",
+     "src": "img/ep04/017.webp",
+     "revisar": false
+    },
+    {
+     "n": 18,
+     "titulo": "Depois do esforço",
+     "src": "img/ep04/018.webp",
+     "revisar": false
+    },
+    {
+     "n": 19,
+     "titulo": "A prova",
+     "src": "img/ep04/019.webp",
+     "revisar": false
+    },
+    {
+     "n": 20,
+     "titulo": "Reflexo",
+     "src": "img/ep04/020.webp",
+     "revisar": false
+    }
+   ]
+  }
+ ]
+}
