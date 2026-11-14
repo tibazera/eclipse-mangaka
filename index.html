@@ -47,8 +47,10 @@ header.top{padding-block:20px 8px}
 .pg{position:relative;background:var(--surface);min-height:60vh;scroll-margin-top:64px}
 .pg img{display:block;width:100%;height:auto}
 .pg .rv{position:absolute;left:8px;top:8px;font-size:12px;padding:3px 8px;border-radius:999px;background:var(--warn-bg);color:var(--warn)}
-.stage{position:relative;max-width:760px;margin:8px auto 0;cursor:pointer;background:var(--surface);min-height:50vh;-webkit-tap-highlight-color:transparent;user-select:none}
-.stage img{display:block;width:100%;height:auto}
+.stage{position:relative;max-width:100%;margin:8px auto 0;cursor:pointer;background:var(--surface);min-height:50vh;-webkit-tap-highlight-color:transparent;user-select:none}
+.stage img{display:block;width:auto;height:auto;max-width:100%;max-height:calc(100vh - 64px);max-height:calc(100dvh - 64px);margin:0 auto}
+.stage{display:flex;justify-content:center}
+#app:fullscreen{background:var(--bg);overflow:auto}
 .stage .rv{position:absolute;left:8px;top:8px;font-size:12px;padding:3px 8px;border-radius:999px;background:var(--warn-bg);color:var(--warn)}
 .endbox{max-width:760px;margin:12px auto 0;display:flex;flex-direction:column;gap:10px}
 .hint{max-width:760px;margin:12px auto 32px;color:var(--muted);font-size:13px;text-align:center}
@@ -84,6 +86,7 @@ function musicBtn(c){
   ev.forEach(function(e){document.addEventListener(e,retry,true)});
   return b;
 }
+function toggleFS(){var d=document;if(d.fullscreenElement||d.webkitFullscreenElement){(d.exitFullscreen||d.webkitExitFullscreen).call(d)}else{var r=APP.requestFullscreen||APP.webkitRequestFullscreen;if(r)r.call(APP)}}
 function stopMusic(){AUD.pause();AUDSRC=null}
 function home(){
   stopMusic();
@@ -117,7 +120,8 @@ function readerPaged(id){
   var bar=el('div','bar'); var back=el('button','btn','‹ Lista'); back.onclick=function(){location.hash=''};
   var title=el('div','t',esc(c.titulo+' · '+c.sub)); var pos=el('div','pos','');
   var mode=el('button','btn','Rolagem'); mode.onclick=function(){ls('modo','rolagem');readerScroll(id)};
-  bar.appendChild(back);bar.appendChild(title);bar.appendChild(pos);bar.appendChild(mode);bar.appendChild(musicBtn(c));APP.appendChild(bar);
+  var fs=el('button','btn','⛶'); fs.setAttribute('aria-label','Tela cheia'); fs.onclick=function(e){e.stopPropagation();toggleFS()};
+  bar.appendChild(back);bar.appendChild(title);bar.appendChild(pos);bar.appendChild(mode);bar.appendChild(fs);bar.appendChild(musicBtn(c));APP.appendChild(bar);
   var stage=el('div','stage'); var img=el('img'); var rv=el('span','rv'); rv.textContent='em correção';
   var endbox=el('div','endbox'); stage.appendChild(img);stage.appendChild(rv);APP.appendChild(stage);APP.appendChild(endbox);
   var hint=el('p','hint','Toque na imagem para avançar. Toque na borda esquerda ou deslize para voltar.'); APP.appendChild(hint);
@@ -136,7 +140,7 @@ function readerPaged(id){
   stage.addEventListener('click',function(e){var r=stage.getBoundingClientRect();(e.clientX-r.left)<r.width*0.3?show(idx-1):show(idx+1)});
   var sx=null;stage.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
   stage.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;sx=null;if(Math.abs(dx)>60){e.preventDefault();dx<0?show(idx+1):show(idx-1)}});
-  document.onkeydown=function(e){if(e.key==='ArrowRight'||e.key===' ')show(idx+1);if(e.key==='ArrowLeft')show(idx-1)};
+  document.onkeydown=function(e){if(e.key==='f'||e.key==='F')toggleFS();if(e.key==='ArrowRight'||e.key===' ')show(idx+1);if(e.key==='ArrowLeft')show(idx-1)};
   show(idx);
 }
 
