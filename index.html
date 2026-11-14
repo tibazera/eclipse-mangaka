@@ -78,7 +78,10 @@ function musicBtn(c){
   sync();
   if(AUDSRC!==c.musica){AUD.pause();AUDSRC=null}
   start();
-  document.addEventListener('pointerdown',start,{once:true});
+  var ev=['pointerdown','touchend','click','keydown'];
+  function retry(){start();}
+  AUD.onplaying=function(){ev.forEach(function(e){document.removeEventListener(e,retry,true)})};
+  ev.forEach(function(e){document.addEventListener(e,retry,true)});
   return b;
 }
 function stopMusic(){AUD.pause();AUDSRC=null}
