@@ -785,7 +785,7 @@
    "id": "ep06",
    "titulo": "Episódio 6",
    "sub": "Colosso Incompleto",
-   "status": "Em produção; páginas revisadas entram progressivamente",
+   "status": "20 páginas ilustradas; revisão visual concluída",
    "total": 20,
    "capa": "img/ep06/capa.webp",
    "paginas": [
@@ -883,6 +883,30 @@
      "n": 16,
      "titulo": "Respirando",
      "src": "img/ep06/016.webp?v=1794689658288414500",
+     "revisar": false
+    },
+    {
+     "n": 17,
+     "titulo": "Uma das sete",
+     "src": "img/ep06/017.webp?v=1794689779871080000",
+     "revisar": false
+    },
+    {
+     "n": 18,
+     "titulo": "Ninguém vê",
+     "src": "img/ep06/018.webp?v=1794690022579337300",
+     "revisar": false
+    },
+    {
+     "n": 19,
+     "titulo": "O caminho de casa",
+     "src": "img/ep06/019.webp?v=1794690216653748200",
+     "revisar": false
+    },
+    {
+     "n": 20,
+     "titulo": "O disco quente",
+     "src": "img/ep06/020.webp?v=1794690469941811200",
      "revisar": false
     }
    ]
