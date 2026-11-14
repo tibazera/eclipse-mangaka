@@ -655,7 +655,7 @@
    "id": "ep05",
    "titulo": "Episódio 5",
    "sub": "Espelho",
-   "status": "Em produção; páginas revisadas entram progressivamente",
+   "status": "20 páginas ilustradas; revisão visual concluída",
    "total": 20,
    "capa": "img/ep05/capa.webp",
    "paginas": [
@@ -753,6 +753,30 @@
      "n": 16,
      "titulo": "Juntos",
      "src": "img/ep05/016.webp?v=1794656102342396700",
+     "revisar": false
+    },
+    {
+     "n": 17,
+     "titulo": "Vidro",
+     "src": "img/ep05/017.webp?v=1794685637323103600",
+     "revisar": false
+    },
+    {
+     "n": 18,
+     "titulo": "Ainda acesa",
+     "src": "img/ep05/018.webp?v=1794685771632912500",
+     "revisar": false
+    },
+    {
+     "n": 19,
+     "titulo": "Aqui",
+     "src": "img/ep05/019.webp?v=1794685990253222000",
+     "revisar": false
+    },
+    {
+     "n": 20,
+     "titulo": "Além do vidro",
+     "src": "img/ep05/020.webp?v=1794686267684322800",
      "revisar": false
     }
    ]
