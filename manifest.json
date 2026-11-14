@@ -129,8 +129,7 @@
      "src": "img/prologo/020.webp",
      "revisar": false
     }
-   ],
-   "musica": "audio/prologo.mp3"
+   ]
   },
   {
    "id": "ep01",
@@ -260,8 +259,7 @@
      "src": "img/ep01/020.webp",
      "revisar": false
     }
-   ],
-   "musica": "audio/ep01.mp3"
+   ]
   },
   {
    "id": "ep02",
@@ -391,8 +389,7 @@
      "src": "img/ep02/020.webp",
      "revisar": false
     }
-   ],
-   "musica": "audio/ep02.mp3"
+   ]
   },
   {
    "id": "ep03",
@@ -522,8 +519,7 @@
      "src": "img/ep03/020.webp",
      "revisar": false
     }
-   ],
-   "musica": "audio/ep03.mp3"
+   ]
   },
   {
    "id": "ep04",
@@ -653,8 +649,7 @@
      "src": "img/ep04/020.webp",
      "revisar": false
     }
-   ],
-   "musica": "audio/ep04.mp3"
+   ]
   }
  ]
 }
