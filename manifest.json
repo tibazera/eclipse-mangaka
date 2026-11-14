@@ -780,6 +780,34 @@
      "revisar": false
     }
    ]
+  },
+  {
+   "id": "ep06",
+   "titulo": "Episódio 6",
+   "sub": "Colosso Incompleto",
+   "status": "Em produção; páginas revisadas entram progressivamente",
+   "total": 20,
+   "capa": "img/ep06/capa.webp",
+   "paginas": [
+    {
+     "n": 1,
+     "titulo": "Vidro na avenida",
+     "src": "img/ep06/001.webp?v=1794686440625825200",
+     "revisar": false
+    },
+    {
+     "n": 2,
+     "titulo": "O primeiro golpe",
+     "src": "img/ep06/002.webp?v=1794686585731207800",
+     "revisar": false
+    },
+    {
+     "n": 3,
+     "titulo": "De volta",
+     "src": "img/ep06/003.webp?v=1794686682852261500",
+     "revisar": false
+    }
+   ]
   }
  ]
 }
