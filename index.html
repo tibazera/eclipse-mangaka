@@ -67,7 +67,23 @@ function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorag
 function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 
+var AUD=new Audio();AUD.loop=true;AUD.volume=.35;var AUDSRC=null;
+function musicOn(){return ls('mus')!=='off'}
+function musicBtn(c){
+  if(!c.musica)return el('span');
+  var b=el('button','btn');
+  function sync(){b.textContent=musicOn()?'♪':'♪̸';b.setAttribute('aria-label',musicOn()?'Desligar música':'Ligar música');b.setAttribute('aria-pressed',musicOn())}
+  function start(){if(!musicOn())return;if(AUDSRC!==c.musica){AUD.src=c.musica;AUDSRC=c.musica}AUD.play().catch(function(){})}
+  b.onclick=function(e){e.stopPropagation();ls('mus',musicOn()?'off':'on');if(musicOn())start();else AUD.pause();sync()};
+  sync();
+  if(AUDSRC!==c.musica){AUD.pause();AUDSRC=null}
+  start();
+  document.addEventListener('pointerdown',start,{once:true});
+  return b;
+}
+function stopMusic(){AUD.pause();AUDSRC=null}
 function home(){
+  stopMusic();
   APP.innerHTML='';
   var h=el('header','top','<h1 class="logo">ECLI<span>P</span>SE</h1><p class="sub">Mangá em produção · atualizado em '+esc(DATA.atualizado.split('-').reverse().join('/'))+'</p>');
   APP.appendChild(h);
@@ -98,7 +114,7 @@ function readerPaged(id){
   var bar=el('div','bar'); var back=el('button','btn','‹ Lista'); back.onclick=function(){location.hash=''};
   var title=el('div','t',esc(c.titulo+' · '+c.sub)); var pos=el('div','pos','');
   var mode=el('button','btn','Rolagem'); mode.onclick=function(){ls('modo','rolagem');readerScroll(id)};
-  bar.appendChild(back);bar.appendChild(title);bar.appendChild(pos);bar.appendChild(mode);APP.appendChild(bar);
+  bar.appendChild(back);bar.appendChild(title);bar.appendChild(pos);bar.appendChild(mode);bar.appendChild(musicBtn(c));APP.appendChild(bar);
   var stage=el('div','stage'); var img=el('img'); var rv=el('span','rv'); rv.textContent='em correção';
   var endbox=el('div','endbox'); stage.appendChild(img);stage.appendChild(rv);APP.appendChild(stage);APP.appendChild(endbox);
   var hint=el('p','hint','Toque na imagem para avançar. Toque na borda esquerda ou deslize para voltar.'); APP.appendChild(hint);
@@ -127,7 +143,7 @@ function readerScroll(id){
   var bar=el('div','bar'); var back=el('button','btn','‹ Lista'); back.onclick=function(){location.hash=''};
   var title=el('div','t',esc(c.titulo+' · '+c.sub)); var pos=el('div','pos','');
   var mode=el('button','btn','Página'); mode.onclick=function(){ls('modo','paginas');readerPaged(id)};
-  bar.appendChild(back);bar.appendChild(title);bar.appendChild(pos);bar.appendChild(mode);APP.appendChild(bar);
+  bar.appendChild(back);bar.appendChild(title);bar.appendChild(pos);bar.appendChild(mode);bar.appendChild(musicBtn(c));APP.appendChild(bar);
   var box=el('div','pages'); APP.appendChild(box);
   var nodes=[];
   if(c.capa){var d=el('div','pg'); d.innerHTML='<img alt="Capa de '+esc(c.sub)+'" src="'+c.capa+'">'; box.appendChild(d)}
