@@ -650,6 +650,34 @@
      "revisar": false
     }
    ]
+  },
+  {
+   "id": "ep05",
+   "titulo": "Episódio 5",
+   "sub": "Espelho",
+   "status": "Em produção; páginas revisadas entram progressivamente",
+   "total": 20,
+   "capa": "img/ep05/capa.webp",
+   "paginas": [
+    {
+     "n": 1,
+     "titulo": "Arroz frio",
+     "src": "img/ep05/001.webp?v=1794651839205489100",
+     "revisar": false
+    },
+    {
+     "n": 2,
+     "titulo": "Meio segundo",
+     "src": "img/ep05/002.webp?v=1794651904095048000",
+     "revisar": false
+    },
+    {
+     "n": 3,
+     "titulo": "Água corrente",
+     "src": "img/ep05/003.webp?v=1794652018324670500",
+     "revisar": false
+    }
+   ]
   }
  ]
 }
